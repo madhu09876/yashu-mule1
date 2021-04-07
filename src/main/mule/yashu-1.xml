@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="c80d8409-ee5b-4bb6-a0a8-5e9456e8aef5" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<flow name="yashu-1Flow" doc:id="d104c081-40e3-45f4-95b1-720d4d27977b" >
+		<http:listener doc:name="Listener" doc:id="4c99818a-bb63-44b5-87e7-9d3d1cc01d88" config-ref="HTTP_Listener_config" path="/ys"/>
+		<set-payload value="hi how r u" doc:name="Set Payload" doc:id="2585913e-6025-43d2-a3ca-489f0d70b015" />
+		<logger level="INFO" doc:name="Logger" doc:id="4a5c199d-1fbb-4bdc-8d31-15fe0f18d7e2" message="finesh"/>
+	</flow>
+</mule>
